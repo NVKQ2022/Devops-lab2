@@ -89,11 +89,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Terraform Init
-        run: >
-          terraform init
-          -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}"
-          -backend-config="dynamodb_table=${{ secrets.TF_STATE_LOCK_TABLE }}"
-          -backend-config="region=${{ secrets.AWS_REGION }}"
+        run: terraform init
         working-directory: ${{ env.TF_WORKING_DIR }}
 
       - name: Terraform Plan
@@ -128,11 +124,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Terraform Init
-        run: >
-          terraform init
-          -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}"
-          -backend-config="dynamodb_table=${{ secrets.TF_STATE_LOCK_TABLE }}"
-          -backend-config="region=${{ secrets.AWS_REGION }}"
+        run: terraform init
         working-directory: ${{ env.TF_WORKING_DIR }}
 
       - name: Download Plan
