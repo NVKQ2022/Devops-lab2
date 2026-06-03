@@ -1,0 +1,9 @@
+---
+compact: true
+directory:
+  - ./terraform/cau1
+  - ./terraform/cau3
+skip-path:
+  - .terraform
+framework:
+  - terraform
