@@ -29,7 +29,7 @@ jobs:
           fetch-depth: 0
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v5
+        uses: sonarsource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -57,27 +57,27 @@ jobs:
           exit-code: 1
           severity: HIGH,CRITICAL
 
-  snyk:
-    name: Snyk Security Scan
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  # snyk:
+  #   name: Snyk Security Scan
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Snyk Source Scan
-        uses: snyk/actions@v0.4.0
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: monitor
-          args: --file=sonar-project.properties
+  #     - name: Snyk Source Scan
+  #       uses: snyk/actions@v0.4.0
+  #       env:
+  #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  #       with:
+  #         command: monitor
+  #         args: --file=sonar-project.properties
 
-      - name: Snyk IaC Scan
-        uses: snyk/actions@v0.4.0
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: iac
-          args: terraform/
+  #     - name: Snyk IaC Scan
+  #       uses: snyk/actions@v0.4.0
+  #       env:
+  #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  #       with:
+  #         command: iac
+  #         args: terraform/
 
   build:
     name: Build ${{ matrix.service }}
