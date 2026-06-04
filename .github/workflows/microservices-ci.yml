@@ -232,3 +232,8 @@ jobs:
             --set images.repository=public.ecr.aws/n2m8n7v2/devops-project \
             --set images.tag=${{ steps.tag.outputs.tag }} \
             --timeout 5m
+
+      - name: Get frontend URL
+        run: |
+          sleep 30
+          echo "Frontend URL: http://$(kubectl get svc --namespace onlineboutique frontend-external --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")"
