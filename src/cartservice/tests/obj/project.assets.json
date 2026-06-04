@@ -3035,11 +3035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\tests\\cartservice.tests.csproj",
+      "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\tests\\cartservice.tests.csproj",
       "projectName": "cartservice.tests",
-      "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\tests\\cartservice.tests.csproj",
+      "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\tests\\cartservice.tests.csproj",
       "packagesPath": "C:\\Users\\quan\\.nuget\\packages\\",
-      "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\tests\\obj\\",
+      "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3061,8 +3061,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\src\\cartservice.csproj": {
-              "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\src\\cartservice.csproj"
+            "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\src\\cartservice.csproj": {
+              "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\src\\cartservice.csproj"
             }
           }
         }

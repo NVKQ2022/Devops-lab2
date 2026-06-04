@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fiQNyYKj72s=",
+  "dgSpecHash": "ao6UJgZKKUg=",
   "success": true,
-  "projectFilePath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\my\\microservices-standalone\\src\\cartservice\\src\\cartservice.csproj",
+  "projectFilePath": "\\\\wsl.localhost\\Ubuntu\\home\\quan\\projects\\schoolProjects\\Devops\\th\\src\\cartservice\\src\\cartservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\quan\\.nuget\\packages\\google.api.commonprotos\\2.17.0\\google.api.commonprotos.2.17.0.nupkg.sha512",
     "C:\\Users\\quan\\.nuget\\packages\\google.api.gax\\4.12.1\\google.api.gax.4.12.1.nupkg.sha512",
