@@ -231,4 +231,4 @@ jobs:
             --namespace onlineboutique --create-namespace \
             --set images.repository=public.ecr.aws/n2m8n7v2/devops-project \
             --set images.tag=${{ steps.tag.outputs.tag }} \
-            --wait --timeout 10m
+            --timeout 5m
