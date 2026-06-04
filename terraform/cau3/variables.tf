@@ -28,6 +28,18 @@ variable "cluster_version" {
   default     = "1.30"
 }
 
+variable "endpoint_private_access" {
+  description = "Enable private API server endpoint"
+  type        = bool
+  default     = true
+}
+
+variable "endpoint_public_access" {
+  description = "Enable public API server endpoint"
+  type        = bool
+  default     = true
+}
+
 variable "node_instance_types" {
   description = "Instance types for EKS node group"
   type        = list(string)
