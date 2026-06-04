@@ -235,5 +235,15 @@ jobs:
 
       - name: Get frontend URL
         run: |
-          sleep 30
-          echo "Frontend URL: http://$(kubectl get svc --namespace onlineboutique frontend-external --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")"
+          echo "Waiting for LoadBalancer hostname..."
+          for i in $(seq 1 10); do
+            HOSTNAME=$(kubectl get svc -n onlineboutique frontend-external -o jsonpath='{.status.loadBalancer.ingress[0].hostname}' 2>/dev/null || true)
+            if [ -n "$HOSTNAME" ]; then
+              echo "Frontend URL: http://$HOSTNAME"
+              exit 0
+            fi
+            echo "Attempt $i/10 — not ready yet, sleeping 15s..."
+            sleep 15
+          done
+          echo "ERROR: LoadBalancer did not provision in time"
+          exit 1
