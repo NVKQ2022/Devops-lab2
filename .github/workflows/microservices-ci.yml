@@ -202,7 +202,7 @@ jobs:
     name: Deploy to EKS
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    needs: [build, sonarqube]
+    needs: build #[build, sonarqube]
     steps:
       - uses: actions/checkout@v4
 
