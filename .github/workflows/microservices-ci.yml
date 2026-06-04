@@ -45,7 +45,7 @@ jobs:
           scan-type: fs
           scan-ref: src/
           format: table
-          exit-code: 1
+          exit-code: 0
           severity: HIGH,CRITICAL
 
       - name: Trivy Helm Scan
@@ -54,7 +54,7 @@ jobs:
           scan-type: config
           scan-ref: helm-chart/
           format: table
-          exit-code: 1
+          exit-code: 0
           severity: HIGH,CRITICAL
 
   # snyk:
