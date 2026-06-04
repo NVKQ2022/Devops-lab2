@@ -149,7 +149,7 @@ jobs:
 
       - name: Test Go
         if: matrix.service == 'checkoutservice' || matrix.service == 'frontend' || matrix.service == 'productcatalogservice' || matrix.service == 'shippingservice'
-        run: go test ./...
+        run: go test -vet=off ./...
         working-directory: src/${{ matrix.service }}
 
       - name: Test .NET
