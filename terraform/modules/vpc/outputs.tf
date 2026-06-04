@@ -10,22 +10,22 @@ output "vpc_cidr" {
 
 output "public_subnet_ids" {
   description = "IDs of the public subnets"
-  value       = aws_subnet.public[*].id
+  value = [for k, s in aws_subnet.this : s.id if startswith(k, "public-")]
 }
 
 output "private_subnet_ids" {
   description = "IDs of the private subnets"
-  value       = aws_subnet.private[*].id
+  value = [for k, s in aws_subnet.this : s.id if startswith(k, "private-")]
 }
 
 output "public_subnet_cidrs" {
   description = "CIDRs of the public subnets"
-  value       = aws_subnet.public[*].cidr_block
+  value = [for k, s in aws_subnet.this : s.cidr_block if startswith(k, "public-")]
 }
 
 output "private_subnet_cidrs" {
   description = "CIDRs of the private subnets"
-  value       = aws_subnet.private[*].cidr_block
+  value = [for k, s in aws_subnet.this : s.cidr_block if startswith(k, "private-")]
 }
 
 output "nat_gateway_ids" {

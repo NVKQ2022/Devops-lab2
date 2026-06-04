@@ -23,6 +23,15 @@ variable "private_subnet_cidrs" {
   type        = list(string)
 }
 
+variable "subnet_tags" {
+  description = "Additional tags per subnet type (public/private)"
+  type        = map(map(string))
+  default = {
+    public  = {}
+    private = {}
+  }
+}
+
 variable "enable_nat_gateway" {
   description = "Whether to create a NAT Gateway"
   type        = bool

@@ -20,6 +20,15 @@ module "vpc" {
   enable_nat_gateway = true
   single_nat_gateway = true
 
+  subnet_tags = {
+    public = {
+      "kubernetes.io/role/elb" = "1"
+    }
+    private = {
+      "kubernetes.io/role/internal-elb" = "1"
+    }
+  }
+
   tags = {
     Environment = var.environment
     Project     = var.project_name
@@ -32,7 +41,7 @@ module "eks" {
   name_prefix = local.name_prefix
   vpc_id      = module.vpc.vpc_id
 
-  subnet_ids              = module.vpc.private_subnet_ids
+  subnet_ids              = concat(module.vpc.public_subnet_ids, module.vpc.private_subnet_ids)
   node_subnet_ids         = module.vpc.private_subnet_ids
   cluster_version         = var.cluster_version
   endpoint_private_access = var.endpoint_private_access
