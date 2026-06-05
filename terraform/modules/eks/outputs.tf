@@ -15,7 +15,7 @@ output "cluster_endpoint" {
 
 output "cluster_certificate_authority" {
   description = "The certificate authority data"
-  value       = module.eks.cluster_certificate_authority
+  value       = module.eks.cluster_certificate_authority_data
 }
 
 output "cluster_security_group_id" {
@@ -30,12 +30,12 @@ output "node_role_arn" {
 
 output "node_group_id" {
   description = "The ID of the node group"
-  value       = module.eks.eks_managed_node_groups["default"].eks_managed_node_group_id
+  value       = module.eks.eks_managed_node_groups["default"].node_group_id
 }
 
 output "node_group_arn" {
   description = "The ARN of the node group"
-  value       = module.eks.eks_managed_node_groups["default"].eks_managed_node_group_arn
+  value       = module.eks.eks_managed_node_groups["default"].node_group_arn
 }
 
 output "oidc_provider_arn" {
