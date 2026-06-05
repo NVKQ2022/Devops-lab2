@@ -21,7 +21,7 @@ variable "node_subnet_ids" {
 variable "cluster_version" {
   description = "Kubernetes version for the EKS cluster"
   type        = string
-  default     = "1.30"
+  default     = "1.34"
 }
 
 variable "endpoint_private_access" {
@@ -58,6 +58,12 @@ variable "node_max_size" {
   description = "Maximum number of nodes"
   type        = number
   default     = 3
+}
+
+variable "authentication_mode" {
+  description = "The authentication mode for the cluster. Valid values: CONFIG_MAP, API, API_AND_CONFIG_MAP"
+  type        = string
+  default     = "API_AND_CONFIG_MAP"
 }
 
 variable "tags" {
