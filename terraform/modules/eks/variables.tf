@@ -37,6 +37,25 @@ variable "authentication_mode" {
   default     = "API_AND_CONFIG_MAP"
 }
 
+variable "access_entries" {
+  description = "Map of access entries to add to the cluster"
+  type = map(object({
+    kubernetes_groups = optional(list(string))
+    principal_arn     = string
+    type              = optional(string, "STANDARD")
+    user_name         = optional(string)
+    tags              = optional(map(string), {})
+    policy_associations = optional(map(object({
+      policy_arn = string
+      access_scope = object({
+        namespaces = optional(list(string))
+        type       = string
+      })
+    })), {})
+  }))
+  default = {}
+}
+
 variable "tags" {
   description = "Additional tags for all resources"
   type        = map(string)

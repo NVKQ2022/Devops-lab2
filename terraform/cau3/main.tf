@@ -2,6 +2,8 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+data "aws_caller_identity" "current" {}
+
 locals {
   name_prefix = "${var.project_name}-${var.environment}-cau3"
   azs         = slice(data.aws_availability_zones.available.names, 0, 2)
@@ -45,6 +47,21 @@ module "eks" {
   cluster_version         = var.cluster_version
   endpoint_private_access = var.endpoint_private_access
   endpoint_public_access  = var.endpoint_public_access
+
+  access_entries = {
+    root = {
+      principal_arn = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+      type          = "STANDARD"
+      policy_associations = {
+        admin = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          access_scope = {
+            type = "cluster"
+          }
+        }
+      }
+    }
+  }
 
   tags = {
     Environment = var.environment

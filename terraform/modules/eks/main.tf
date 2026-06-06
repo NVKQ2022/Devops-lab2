@@ -18,6 +18,7 @@ module "eks" {
   authentication_mode = var.authentication_mode
 
   enable_cluster_creator_admin_permissions = true
+  access_entries = var.access_entries
 
   create_auto_mode_iam_resources = true
   compute_config = {
