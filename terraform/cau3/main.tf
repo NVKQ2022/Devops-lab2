@@ -50,7 +50,7 @@ module "eks" {
 
   access_entries = {
     root = {
-      principal_arn = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+      principal_arn = "arn:aws:iam::${var.admin_account_id}:root"
       type          = "STANDARD"
       policy_associations = {
         admin = {

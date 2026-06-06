@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "admin_account_id" {
+  description = "AWS Account ID of the admin user for EKS cluster access"
+  type        = string
+  default     = "979408491078"
+}
+
 variable "project_name" {
   description = "Project name used for tagging"
   type        = string
