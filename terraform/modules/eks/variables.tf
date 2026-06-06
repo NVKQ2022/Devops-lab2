@@ -9,12 +9,7 @@ variable "vpc_id" {
 }
 
 variable "subnet_ids" {
-  description = "Subnet IDs for the EKS cluster (control plane)"
-  type        = list(string)
-}
-
-variable "node_subnet_ids" {
-  description = "Subnet IDs for the node group"
+  description = "Subnet IDs for the EKS cluster"
   type        = list(string)
 }
 
@@ -34,30 +29,6 @@ variable "endpoint_public_access" {
   description = "Enable public API server endpoint"
   type        = bool
   default     = false
-}
-
-variable "node_instance_types" {
-  description = "Instance types for the node group"
-  type        = list(string)
-  default     = ["t3.micro"]
-}
-
-variable "node_desired_size" {
-  description = "Desired number of nodes"
-  type        = number
-  default     = 2
-}
-
-variable "node_min_size" {
-  description = "Minimum number of nodes"
-  type        = number
-  default     = 1
-}
-
-variable "node_max_size" {
-  description = "Maximum number of nodes"
-  type        = number
-  default     = 3
 }
 
 variable "authentication_mode" {

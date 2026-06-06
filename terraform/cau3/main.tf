@@ -42,14 +42,9 @@ module "eks" {
   vpc_id      = module.vpc.vpc_id
 
   subnet_ids              = concat(module.vpc.public_subnet_ids, module.vpc.private_subnet_ids)
-  node_subnet_ids         = module.vpc.private_subnet_ids
   cluster_version         = var.cluster_version
   endpoint_private_access = var.endpoint_private_access
   endpoint_public_access  = var.endpoint_public_access
-  node_instance_types     = var.node_instance_types
-  node_desired_size       = var.node_desired_size
-  node_min_size           = var.node_min_size
-  node_max_size           = var.node_max_size
 
   tags = {
     Environment = var.environment

@@ -23,21 +23,6 @@ output "cluster_security_group_id" {
   value       = module.eks.cluster_security_group_id
 }
 
-output "node_role_arn" {
-  description = "ARN of the node IAM role"
-  value       = module.eks.eks_managed_node_groups["default"].iam_role_arn
-}
-
-output "node_group_id" {
-  description = "The ID of the node group"
-  value       = module.eks.eks_managed_node_groups["default"].node_group_id
-}
-
-output "node_group_arn" {
-  description = "The ARN of the node group"
-  value       = module.eks.eks_managed_node_groups["default"].node_group_arn
-}
-
 output "oidc_provider_arn" {
   description = "The ARN of the OIDC Provider"
   value       = module.eks.oidc_provider_arn
