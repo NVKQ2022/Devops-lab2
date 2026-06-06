@@ -22,7 +22,8 @@ module "eks" {
 
   create_auto_mode_iam_resources = true
   compute_config = {
-    enabled = true
+    enabled    = true
+    node_pools = ["general-purpose"]
   }
 
   tags = var.tags
